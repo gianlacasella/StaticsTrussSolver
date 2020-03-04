@@ -45,7 +45,7 @@ class App:
             k+=1
         print('GIE: ', self._GIE)
         print(self._result)
-        pt.savefig('figure.jpg',dpi=1000,quality=95,format='jpg',optimize=True)
+        pt.savefig('result/figure.jpg',dpi=1000,quality=95,format='jpg',optimize=True)
         
         
     
