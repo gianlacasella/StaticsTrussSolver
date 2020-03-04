@@ -54,16 +54,30 @@ class App:
         for force in self._forces:
             node_coordinates = self._nodesAsList[int(force[0])]
             ax = pt.axes()
-            extrapForce = [force[1]/1000,force[2]/1000]
-            ax.arrow(node_coordinates[0], node_coordinates[1], extrapForce[0], extrapForce[1], head_width=0.2, head_length=0.3, fc='lightblue', ec='black')
-            if(extrapForce[0]<minx):
-                minx=extrapForce[0]
-            elif(extrapForce[1]<miny):
-                miny=extrapForce[1]
-            if(extrapForce[0]>maxx):
-                maxx=extrapForce[0]
-            elif(extrapForce[1]>maxy):
-                maxy=extrapForce[1]
+            #If forces are too big, they neet to be divided by 1000
+            if(abs(force[1])>10 or abs(force[2])>50):
+                extrapForce = [force[1]/1000,force[2]/1000]
+                ax.arrow(node_coordinates[0], node_coordinates[1], extrapForce[0], extrapForce[1], head_width=0.2, head_length=0.3, fc='lightblue', ec='black')
+                if(extrapForce[0]<minx):
+                    minx=extrapForce[0]
+                elif(extrapForce[1]<miny):
+                    miny=extrapForce[1]
+                if(extrapForce[0]>maxx):
+                    maxx=extrapForce[0]
+                elif(extrapForce[1]>maxy):
+                    maxy=extrapForce[1]
+                pt.text(extrapForce[0]+node_coordinates[0]+0.3,extrapForce[1]+node_coordinates[1],'(' + str(extrapForce[0]) + ',' + str(extrapForce[1]) + ')')
+            else:
+                ax.arrow(node_coordinates[0], node_coordinates[1], force[1], force[2], head_width=0.2, head_length=0.3, fc='lightblue', ec='black')
+                if(force[1]<minx):
+                    minx=force[1]
+                elif(force[2]<miny):
+                    miny=force[2]
+                if(force[1]>maxx):
+                    maxx=force[1]
+                elif(force[2]>maxy):
+                    maxy=force[2]
+                pt.text(force[1]+node_coordinates[0]+0.3,force[2]+node_coordinates[1],'(' + str(force[1]) + ',' + str(force[2]) + ')')
         pt.xlim(minx-1,maxx+1)
         pt.ylim(miny-1,maxy+1)
         
