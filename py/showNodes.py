@@ -37,7 +37,7 @@ class App:
         for node in self._nodesAsList:
             pt.text(node[0]-0.5, node[1]+0.1, i)
             i+=1
-        pt.savefig(pt.savefig('nodes/nodes.jpg',dpi=1000,quality=95,format='jpg',optimize=True))
+        pt.savefig('../../py/nodes.jpg',dpi=1000,quality=95,format='jpg',optimize=True)
         print('Done')
         exit(0)
         

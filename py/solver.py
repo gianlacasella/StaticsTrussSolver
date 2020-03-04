@@ -82,7 +82,7 @@ class App:
         pt.ylim(miny-1,maxy+1)
         
         #Showing result
-        pt.savefig('result/result.jpg',dpi=1000,quality=95,format='jpg',optimize=True)
+        pt.savefig('../../py/result.jpg',dpi=1000,quality=95,format='jpg',optimize=True)
         print(self._GIE)
         print(self._result)
         exit(0)

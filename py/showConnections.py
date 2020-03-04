@@ -55,7 +55,7 @@ class App:
             y = self._nodes[bar,1]
             pt.plot(x,y,color="black",linewidth = 2)
             k+=1
-        pt.savefig(pt.savefig('connections/connections.jpg',dpi=1000,quality=95,format='jpg',optimize=True))
+        pt.savefig(pt.savefig('../../py/connections.jpg',dpi=1000,quality=95,format='jpg',optimize=True))
         print('Done')
         exit(0)
         

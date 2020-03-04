@@ -111,7 +111,7 @@ class App:
             
         pt.xlim(minx-1,maxx+1)
         pt.ylim(miny-1,maxy+1)
-        pt.savefig(pt.savefig('forces/forces.jpg',dpi=1000,quality=95,format='jpg',optimize=True))
+        pt.savefig(pt.savefig('../../py/forces.jpg',dpi=1000,quality=95,format='jpg',optimize=True))
         print('Done')
         exit(0)
         
