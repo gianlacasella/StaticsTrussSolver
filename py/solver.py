@@ -1,9 +1,31 @@
 from optparse import OptionParser
+from scipy import array as sciarr
+import exceptions
 
 
 class App:
     def __init__(self):
         self.processInput()
+        self.preProcessData()
+        
+        
+        
+    def preProcessData(self):
+        n = self._nodes.shape[0]
+        b = len(self._connections)
+        r = len(self._restrictions)
+        # Degree of static indeterminacy
+        self._GIE = b+r - 2*n
+        # Salimos con mensaje de error si el sistema es hiperestatico o es un mecanismo
+        if self._GIE > 0 :
+            raise exceptions.HyperstaticSystem
+            exit(-1)
+        elif self._GIE < 0 :
+            raise exceptions.MechanismSystem
+            exit(-1)
+        
+        
+        
         
         
     def processInput(self):
@@ -36,6 +58,7 @@ class App:
                 subElement = subElement.replace(']','')
                 elementToAppend.append(float(subElement))
             self._nodes.append(elementToAppend)
+        self._nodes = sciarr(self._nodes)
         #Processing restrictions
         self._restrictions = []
         for element in restrictionElements:
