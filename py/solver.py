@@ -41,10 +41,11 @@ class App:
             y0 = scimean(y)
             pt.plot(x,y,color = c,linewidth = 2)
             rk = rk/1000
-            pt.text(x0-0.5,y0,"{0:4.2f}kN".format(rk), fontsize = 14, color = "k")
+            pt.text(x0-0.5,y0,"{0:4.1f}kN".format(rk), fontsize = 9, color = "k")
             k+=1
+        print('GIE: ', self._GIE)
         print(self._result)
-        pt.show()
+        pt.savefig('figure.jpg',dpi=1000,quality=95,format='jpg',optimize=True)
         
         
     
@@ -99,7 +100,6 @@ class App:
         self._r = len(self._restrictions)
         # Degree of static indeterminacy
         self._GIE = self._b+self._r - 2*self._n
-        print('b: ', self._b, 'r: ', self._r, 'n: ', self._n)
         if self._GIE > 0 :
             raise customExceptions.HyperstaticSystem
             exit(-1)
