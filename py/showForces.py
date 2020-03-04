@@ -63,6 +63,10 @@ class App:
         #Plotting nodes
         #All elements of Column 0 and 1
         pt.plot(self._nodes[:, 0], self._nodes[:, 1], "ok")
+        i=0
+        for node in self._nodesAsList:
+            pt.text(node[0]-0.5, node[1]+0.1, i)
+            i+=1
         k=0
         #Plotting connections
         for bar in self._connections:

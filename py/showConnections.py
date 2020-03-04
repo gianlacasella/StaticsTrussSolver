@@ -28,6 +28,7 @@ class App:
                 subElement = subElement.replace(']','')
                 elementToAppend.append(float(subElement))
             self._nodes.append(elementToAppend)
+        self._nodesAsList = self._nodes.copy()
         self._nodes = sciarray(self._nodes)
         #Processing connections
         self._connections = []
@@ -44,6 +45,10 @@ class App:
     def showConnections(self):
         #Plotting nodes
         pt.plot(self._nodes[:, 0], self._nodes[:, 1], "ok")
+        i=0
+        for node in self._nodesAsList:
+            pt.text(node[0]-0.5, node[1]+0.1, i)
+            i+=1
         k=0
         for bar in self._connections:
             x = self._nodes[bar,0]
