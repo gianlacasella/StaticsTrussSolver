@@ -70,6 +70,7 @@ r = len(restric)
 
 # Determinamos el grado de inteterminacion estatica
 GIE = b+r - 2*n
+print('b: ', b, 'r: ',r, 'n: ', n)
 
 # Lo mostramos
 print("\n\nEl GIE del problema es "+ str(GIE))
@@ -94,6 +95,7 @@ pt.plot(xy[:, 0], xy[:, 1], "ok")
 
 # Recorremos las conexiones para llenar la matriz C
 k = 0
+
 for barra in conectividad:
 	#Recorremos barra por barra las conexiones, y guardamos en ni y nj los nodos de conexion
 	ni = barra[0]
