@@ -1,0 +1,17 @@
+D:\Personal\PROGRAMACION\StaticsTrussSolver\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.exe.config
+D:\Personal\PROGRAMACION\StaticsTrussSolver\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.exe
+D:\Personal\PROGRAMACION\StaticsTrussSolver\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.pdb
+D:\Personal\PROGRAMACION\StaticsTrussSolver\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.csprojAssemblyReference.cache
+D:\Personal\PROGRAMACION\StaticsTrussSolver\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.Form1.resources
+D:\Personal\PROGRAMACION\StaticsTrussSolver\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.Properties.Resources.resources
+D:\Personal\PROGRAMACION\StaticsTrussSolver\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.csproj.GenerateResource.cache
+D:\Personal\PROGRAMACION\StaticsTrussSolver\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.exe
+D:\Personal\PROGRAMACION\StaticsTrussSolver\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.pdb
+D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.csprojAssemblyReference.cache
+D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.Properties.Resources.resources
+D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.csproj.GenerateResource.cache
+D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.exe
+D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.pdb
+D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.exe.config
+D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.exe
+D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.pdb

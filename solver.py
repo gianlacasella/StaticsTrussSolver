@@ -9,6 +9,7 @@ from scipy import sin as scisin
 from scipy import cos as scicos
 from scipy.linalg import solve as scisolve
 from matplotlib import pyplot as pt
+import sys
 import customExceptions
 
 # Codigo de prueba python solver.py -n [0;0],[3;0],[3;4],[9;0],[9;4],[12;0] -c [0;1],[0;2],[1;2],[1;4],[1;3],[2;4],[3;4],[3;5],[5;4] -r [0;3.14/2],[5;3.14/2],[5;0] -f [1;0.;-3000],[3;0.;-5000],[4;2000;0.]
@@ -19,6 +20,8 @@ class App:
         self.preProcessData()
         self.solve()
         self.showResult()
+        
+        
         
     def showResult(self):
         # min and max colors 
@@ -43,9 +46,10 @@ class App:
             rk = rk/1000
             pt.text(x0-0.5,y0,"{0:4.1f}kN".format(rk), fontsize = 9, color = "k")
             k+=1
-        print('GIE: ', self._GIE)
-        print(self._result)
         pt.savefig('result/figure.jpg',dpi=1000,quality=95,format='jpg',optimize=True)
+        print(self._GIE)
+        print(self._result)
+        
         
         
     
@@ -107,6 +111,7 @@ class App:
             raise customExceptions.MechanismSystem
             exit(-1)
         
+            
     def processInput(self):
         #Reading input
         parser = OptionParser()
