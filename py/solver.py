@@ -9,8 +9,6 @@ from scipy import sin as scisin
 from scipy import cos as scicos
 from scipy.linalg import solve as scisolve
 from matplotlib import pyplot as pt
-import sys
-import customExceptions
 
 # Codigo de prueba python solver.py -n [0;0],[3;0],[3;4],[9;0],[9;4],[12;0] -c [0;1],[0;2],[1;2],[1;4],[1;3],[2;4],[3;4],[3;5],[5;4] -r [0;3.14/2],[5;3.14/2],[5;0] -f [1;0.;-3000],[3;0.;-5000],[4;2000;0.]
 
@@ -46,9 +44,34 @@ class App:
             rk = rk/1000
             pt.text(x0-0.5,y0,"{0:4.1f}kN".format(rk), fontsize = 9, color = "k")
             k+=1
-        pt.savefig('result/figure.jpg',dpi=1000,quality=95,format='jpg',optimize=True)
+            
+        #Plotting forces
+        minx = self._nodes[:,0].min()+1
+        miny = self._nodes[:,1].min()+1
+        maxx = self._nodes[:,0].max()+1
+        maxy = self._nodes[:,1].max()+1
+        #Plotting forces
+        for force in self._forces:
+            node_coordinates = self._nodesAsList[int(force[0])]
+            ax = pt.axes()
+            extrapForce = [force[1]/1000,force[2]/1000]
+            ax.arrow(node_coordinates[0], node_coordinates[1], extrapForce[0], extrapForce[1], head_width=0.2, head_length=0.3, fc='lightblue', ec='black')
+            if(extrapForce[0]<minx):
+                minx=extrapForce[0]
+            elif(extrapForce[1]<miny):
+                miny=extrapForce[1]
+            if(extrapForce[0]>maxx):
+                maxx=extrapForce[0]
+            elif(extrapForce[1]>maxy):
+                maxy=extrapForce[1]
+        pt.xlim(minx-1,maxx+1)
+        pt.ylim(miny-1,maxy+1)
+        
+        #Showing result
+        pt.savefig('result/result.jpg',dpi=1000,quality=95,format='jpg',optimize=True)
         print(self._GIE)
         print(self._result)
+        exit(0)
         
         
         
@@ -88,9 +111,7 @@ class App:
         	f[2*node] = fx
         	f[2*node+1] = fy
 
-        # Axis limits
-        pt.ylim(bottom = -3, top = 5)
-        pt.xlim(left = -3, right = 15)
+       
         
         # Solve the system
         self._result = scisolve(C, -f)
@@ -105,11 +126,11 @@ class App:
         # Degree of static indeterminacy
         self._GIE = self._b+self._r - 2*self._n
         if self._GIE > 0 :
-            raise customExceptions.HyperstaticSystem
-            exit(-1)
+            print('ERROR')
+            exit(1)
         elif self._GIE < 0 :
-            raise customExceptions.MechanismSystem
-            exit(-1)
+            print('ERROR')
+            exit(1)
         
             
     def processInput(self):
@@ -142,6 +163,7 @@ class App:
                 subElement = subElement.replace(']','')
                 elementToAppend.append(float(subElement))
             self._nodes.append(elementToAppend)
+        self._nodesAsList = self._nodes.copy()
         self._nodes = sciarray(self._nodes)
         #Processing restrictions
         self._restrictions = []
