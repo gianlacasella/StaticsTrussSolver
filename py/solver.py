@@ -1,7 +1,9 @@
 from optparse import OptionParser
-from scipy import array as sciarr
-import exceptions
-
+from scipy import array as sciarray
+from scipy import asmatrix as sciasmatrix
+from scipy import zeros as scizeros
+from scipy import double as scidouble
+import customExceptions
 
 class App:
     def __init__(self):
@@ -10,23 +12,23 @@ class App:
         
         
         
+    def solve(self):
+        C = sciasmatrix(scizeros((2*self._n, self._b+self._r), dtype = scidouble))
+        f = sciasmatrix(scizeros(2*self._n, dtype = scidouble)).T
+        
     def preProcessData(self):
-        n = self._nodes.shape[0]
-        b = len(self._connections)
-        r = len(self._restrictions)
+        self._n = self._nodes.shape[0]
+        self._b = len(self._connections)
+        self._r = len(self._restrictions)
         # Degree of static indeterminacy
-        self._GIE = b+r - 2*n
+        self._GIE = self._b+self._r - 2*self._n
         # Salimos con mensaje de error si el sistema es hiperestatico o es un mecanismo
         if self._GIE > 0 :
-            raise exceptions.HyperstaticSystem
+            raise customExceptions.HyperstaticSystem
             exit(-1)
         elif self._GIE < 0 :
-            raise exceptions.MechanismSystem
+            raise customExceptions.MechanismSystem
             exit(-1)
-        
-        
-        
-        
         
     def processInput(self):
         #Reading input
@@ -58,7 +60,7 @@ class App:
                 subElement = subElement.replace(']','')
                 elementToAppend.append(float(subElement))
             self._nodes.append(elementToAppend)
-        self._nodes = sciarr(self._nodes)
+        self._nodes = sciarray(self._nodes)
         #Processing restrictions
         self._restrictions = []
         for element in restrictionElements:
@@ -84,4 +86,5 @@ class App:
 
 if __name__ == "__main__":
     pySolver = App()
+    pySolver.solve()
     
