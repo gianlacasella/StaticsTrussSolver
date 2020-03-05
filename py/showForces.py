@@ -73,7 +73,7 @@ class App:
         except:
             print('ERROR')
             exit(1)
-    
+        
 
             
     def showForces(self):
@@ -136,17 +136,8 @@ class App:
             print('    ***** SHOWING ' + str(k) + ' CONNECTIONS, ' + str(i) + ' NODES and ' + str(len(self._forces)) + ' FORCES *****')
             exit(0)
         except:
-            print('ERROR')
+            print('ERROR2')
             exit(1)
         
 if __name__ == "__main__":
     pySolver = App()
-    
-    
-    
-    
-    
-    
-    
-    
-    

@@ -69,7 +69,7 @@ class App:
                         maxx=extrapForce[0]
                     elif(extrapForce[1]>maxy):
                         maxy=extrapForce[1]
-                    pt.text(extrapForce[0]+node_coordinates[0]+0.3,extrapForce[1]+node_coordinates[1],'(' + str(extrapForce[0]) + ',' + str(extrapForce[1]) + ')')
+                    #pt.text(extrapForce[0]+node_coordinates[0]+0.3,extrapForce[1]+node_coordinates[1],'(' + str(extrapForce[0]) + ',' + str(extrapForce[1]) + ')')
                 else:
                     ax.arrow(node_coordinates[0], node_coordinates[1], force[1], force[2], head_width=0.2, head_length=0.3, fc='lightblue', ec='black')
                     if(force[1]<minx):
@@ -80,7 +80,7 @@ class App:
                         maxx=force[1]
                     elif(force[2]>maxy):
                         maxy=force[2]
-                    pt.text(force[1]+node_coordinates[0]+0.3,force[2]+node_coordinates[1],'(' + str(force[1]) + ',' + str(force[2]) + ')')
+                    #pt.text(force[1]+node_coordinates[0]+0.3,force[2]+node_coordinates[1],'(' + str(force[1]) + ',' + str(force[2]) + ')')
             pt.xlim(minx-1,maxx+1)
             pt.ylim(miny-1,maxy+1)
             
@@ -143,9 +143,7 @@ class App:
             	fy = force[2]
             	f[2*node] = fx
             	f[2*node+1] = fy
-    
-           
-            
+
             # Solve the system
             self._result = scisolve(C, -f)
         except:

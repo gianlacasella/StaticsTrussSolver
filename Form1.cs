@@ -23,6 +23,8 @@ namespace StaticsTrussSolver
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg";
             pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
             this.clearFolder();
         }
@@ -76,18 +78,21 @@ namespace StaticsTrussSolver
             {
                 resultBox.Text += resultSeparated[1];
                 resultBox.Text += resultList[1];
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 string imageName = @"\py\nodes" + @resultSeparated[0] + ".jpg";
                 imageName = imageName.Replace('\r', '.');
                 imageName = imageName.Replace("..", ".");
                 if (imageName != @"\py\nodesERROR.jpg")
                 {
+                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName;
                     pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
                 }
             }
             else 
             {
                 resultBox.Text += "    [!]ERROR: something went wrong";
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg";
                 pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
             }
 
@@ -108,26 +113,28 @@ namespace StaticsTrussSolver
             {
                 resultBox.Text += resultSeparated[1];
                 resultBox.Text += resultList[1];
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 string imageName = @"\py\connections" + @resultSeparated[0] + ".jpg";
                 imageName = imageName.Replace('\r', '.');
                 imageName = imageName.Replace("..", ".");
                 if (imageName != @"\py\connectionsERROR.jpg" )
                 {
+                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                     pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
+                    pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName;
                 }
             }
             else
             {
                 resultBox.Text += "    [!]ERROR: something went wrong";
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
+                pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg";
             }
         }
 
         // Click on add forces
         private void button3_Click(object sender, EventArgs e)
         {
-            
             string script = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\showForces.py";
             string nodes = nodesTextBox.Text;
             string nodesFlag = "-n";
@@ -147,11 +154,14 @@ namespace StaticsTrussSolver
                 imageName = imageName.Replace('\r', '.');
                 imageName = imageName.Replace("..", ".");
                 pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
+                pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName;
             }
             else
             {
                 resultBox.Text += "    [!]ERROR: something went wrong";
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
+                pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg";
             }
         }
 
@@ -180,14 +190,14 @@ namespace StaticsTrussSolver
                     i++;
                 }
                 resultBox.Text += resultList[1];
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-
                 string imageName = @"\py\result" + @resultSeparated[0] + ".jpg";
                 imageName = imageName.Replace('\r', '.');
                 imageName = imageName.Replace("..", ".");
                 if (imageName != @"\py\resultERROR.jpg")
                 {
+                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                     pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
+                    pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName;
                 }
             }
             else 
@@ -205,12 +215,24 @@ namespace StaticsTrussSolver
                         break;
                 }
             }
-            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.resultBox.Text = "";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
+            pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg";
+        }
+
+        private void fullSizeButton_Click(object sender, EventArgs e)
+        {
+            FullSizeForm form = new FullSizeForm(Convert.ToString(this.pictureBox.Tag));
+            form.Show();
         }
     }
 }

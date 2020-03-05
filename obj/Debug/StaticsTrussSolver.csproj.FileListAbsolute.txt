@@ -15,7 +15,6 @@ D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.pdb
 D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.exe.config
 D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.exe
 D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.pdb
-D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.Form1.resources
 D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\IronPython.dll
 D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\IronPython.Modules.dll
 D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\IronPython.SQLite.dll
@@ -31,3 +30,5 @@ D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\Microsoft.Dynamic.xml
 D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\Microsoft.Scripting.xml
 D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\Microsoft.Scripting.Metadata.xml
 D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.csproj.CopyComplete
+D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.Form1.resources
+D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.FullSizeForm.resources
