@@ -72,7 +72,7 @@ namespace StaticsTrussSolver
             List<string> resultList = this.executeScript($"{script} {flag} {nodes}");
             string Results = resultList[0];
             string[] resultSeparated = Results.Split('\n');
-            if (resultSeparated.Length > 1)
+            if (resultSeparated.Length > 1 && resultSeparated[0] != "ERROR\r")
             {
                 resultBox.Text += resultSeparated[1];
                 resultBox.Text += resultList[1];
@@ -80,8 +80,17 @@ namespace StaticsTrussSolver
                 string imageName = @"\py\nodes" + @resultSeparated[0] + ".jpg";
                 imageName = imageName.Replace('\r', '.');
                 imageName = imageName.Replace("..", ".");
-                pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
+                if (imageName != @"\py\nodesERROR.jpg")
+                {
+                    pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
+                }
             }
+            else 
+            {
+                resultBox.Text += "    [!]ERROR: something went wrong";
+                pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
+            }
+
         }
 
         // Click on add connections
@@ -95,7 +104,7 @@ namespace StaticsTrussSolver
             List<string> resultList = executeScript($"{script} {nodesFlag} {nodes} {connectionsFlag} {connections}");
             string Results = resultList[0];
             string[] resultSeparated = Results.Split('\n');
-            if (resultSeparated.Length > 1)
+            if (resultSeparated.Length > 1 && resultSeparated[0] != "ERROR\r")
             {
                 resultBox.Text += resultSeparated[1];
                 resultBox.Text += resultList[1];
@@ -103,7 +112,15 @@ namespace StaticsTrussSolver
                 string imageName = @"\py\connections" + @resultSeparated[0] + ".jpg";
                 imageName = imageName.Replace('\r', '.');
                 imageName = imageName.Replace("..", ".");
-                pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
+                if (imageName != @"\py\connectionsERROR.jpg" )
+                {
+                    pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
+                }
+            }
+            else
+            {
+                resultBox.Text += "    [!]ERROR: something went wrong";
+                pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
             }
         }
 
@@ -121,7 +138,7 @@ namespace StaticsTrussSolver
             List<string> resultList = executeScript($"{script} {nodesFlag} {nodes} {connectionsFlag} {connections} {forcesFlag} {forces}");
             string Results = resultList[0];
             string[] resultSeparated = Results.Split('\n');
-            if (resultSeparated.Length > 1)
+            if (resultSeparated.Length > 1 && resultSeparated[0] != "ERROR\r")
             {
                 resultBox.Text += resultSeparated[1];
                 resultBox.Text += resultList[1];
@@ -130,6 +147,11 @@ namespace StaticsTrussSolver
                 imageName = imageName.Replace('\r', '.');
                 imageName = imageName.Replace("..", ".");
                 pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
+            }
+            else
+            {
+                resultBox.Text += "    [!]ERROR: something went wrong";
+                pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
             }
         }
 
@@ -148,7 +170,7 @@ namespace StaticsTrussSolver
             List<string> resultList = executeScript($"{script} {nodesFlag} {nodes} {connectionsFlag} {connections} {forcesFlag} {forces} {restrictionsFlag} {restrictions}");
             string Results = resultList[0];
             string[] resultSeparated = Results.Split('\n');
-            if (resultSeparated.Length > 1 && resultSeparated[0] != "ERRORI\r" && resultSeparated[0] != "ERRORM\r")
+            if (resultSeparated.Length > 1 && resultSeparated[0] != "ERRORI\r" && resultSeparated[0] != "ERRORM\r" && resultSeparated[0]!="ERROR\r")
             {
                 resultBox.Text += resultSeparated[1] + Environment.NewLine;
                 int i = 2;
@@ -173,10 +195,13 @@ namespace StaticsTrussSolver
                 switch (resultSeparated[0])
                 {
                     case "ERRORI\r":
-                        resultBox.Text += "ERROR: GIE<0";
+                        resultBox.Text += "    [!]ERROR: GIE<0";
                         break;
                     case "ERRORM\r":
-                        resultBox.Text += "ERROR: GIE>0";
+                        resultBox.Text += "    [!]ERROR: GIE>0";
+                        break;
+                    case "ERROR\r":
+                        resultBox.Text += "    [!]ERROR: something went wrong";
                         break;
                 }
             }

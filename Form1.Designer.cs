@@ -72,11 +72,12 @@
             this.resultBox.BackColor = System.Drawing.Color.Black;
             this.resultBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultBox.ForeColor = System.Drawing.Color.White;
-            this.resultBox.Location = new System.Drawing.Point(379, 411);
+            this.resultBox.Location = new System.Drawing.Point(430, 411);
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
+            this.resultBox.ReadOnly = true;
             this.resultBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.resultBox.Size = new System.Drawing.Size(754, 242);
+            this.resultBox.Size = new System.Drawing.Size(703, 242);
             this.resultBox.TabIndex = 1;
             // 
             // pictureBox
@@ -228,7 +229,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(209, 26);
+            this.label4.Location = new System.Drawing.Point(198, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 18);
             this.label4.TabIndex = 5;
@@ -260,7 +261,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(164, 69);
             this.button4.TabIndex = 7;
-            this.button4.Text = "CLEAR CONSOLE";
+            this.button4.Text = "CLEAR LOG";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
