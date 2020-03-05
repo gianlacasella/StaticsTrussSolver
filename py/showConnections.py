@@ -63,7 +63,7 @@ class App:
         print(fileNumber)
         path = "connections"+fileNumber+".jpg"
         pt.savefig(path,dpi=1000,quality=95,format='jpg',optimize=True)
-        print('    ***** SHOWING ' + str(k) + ' CONNECTIONS *****')
+        print('    ***** SHOWING ' + str(k) + ' CONNECTIONS and ' + str(i) + ' NODES*****')
         exit(0)
         
     def findNumber(self):

@@ -128,7 +128,7 @@ class App:
         print(fileNumber)
         path = "forces"+fileNumber+".jpg"
         pt.savefig(path,dpi=1000,quality=95,format='jpg',optimize=True)
-        print('    ***** SHOWING ' + str(len(self._forces)) + ' FORCES *****')
+        print('    ***** SHOWING ' + str(k) + ' CONNECTIONS, ' + str(i) + ' NODES and ' + str(len(self._forces)) + ' FORCES *****')
         exit(0)
         
 if __name__ == "__main__":
