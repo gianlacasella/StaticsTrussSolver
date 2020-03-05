@@ -45,9 +45,9 @@ class App:
         print(fileNumber)
         path = "nodes"+fileNumber+".jpg"
         pt.savefig(path,dpi=1000,quality=95,format='jpg',optimize=True)
-        print('Done')
+        print('    ******* SHOWING ' + str(i) + ' NODES *******')
         exit(0)
-        
+    
         
     def findNumber(self):
         maxNumber = 0
