@@ -89,8 +89,8 @@ class App:
         path = "result"+fileNumber+".jpg"
         pt.savefig(path,dpi=1000,quality=95,format='jpg',optimize=True)
         print('    ***** SHOWING RESULT *****')
-        print('GIE:', self._GIE)
-        print('Solution: ', self._result)
+        print('    GIE:', self._GIE)
+        print('    Solution: \n', self._result)
         exit(0)
         
     def findNumber(self):

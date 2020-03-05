@@ -42,34 +42,40 @@ namespace StaticsTrussSolver
                 }
         }
 
-        // Click on add nodes
-        private void button1_Click(object sender, EventArgs e)
+        private List<string> executeScript(string argument) 
         {
             resultBox.Text += System.Environment.NewLine + "    Processing..." + System.Environment.NewLine;
-            string script = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\showNodes.py";
             var psi = new ProcessStartInfo();
             psi.FileName = @"C:\Users\Gianfranco Lacasella\Anaconda3\python.exe";
-            string nodes = nodesTextBox.Text;
-            string flag = "-n";
-            psi.Arguments = $"{script} {flag} {nodes}";
+            psi.Arguments = argument;
             psi.UseShellExecute = false;
             psi.CreateNoWindow = true;
             psi.RedirectStandardOutput = true;
             psi.RedirectStandardError = true;
             var errors = "";
             var results = "";
-            using (var process = Process.Start(psi)) 
+            using (var process = Process.Start(psi))
             {
                 errors = process.StandardError.ReadToEnd();
                 results = process.StandardOutput.ReadToEnd();
                 process.Close();
             }
-            string Results = results;
+            return new List<string>() { results, errors };
+        }
+
+        // Click on add nodes
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string script = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\showNodes.py";
+            string nodes = nodesTextBox.Text;
+            string flag = "-n";
+            List<string> resultList = this.executeScript($"{script} {flag} {nodes}");
+            string Results = resultList[0];
             string[] resultSeparated = Results.Split('\n');
             if (resultSeparated.Length > 1)
             {
                 resultBox.Text += resultSeparated[1];
-                resultBox.Text += errors;
+                resultBox.Text += resultList[1];
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 string imageName = @"\py\nodes" + @resultSeparated[0] + ".jpg";
                 imageName = imageName.Replace('\r', '.');
@@ -81,33 +87,18 @@ namespace StaticsTrussSolver
         // Click on add connections
         private void button2_Click(object sender, EventArgs e)
         {
-            resultBox.Text += System.Environment.NewLine + "    Processing..." + System.Environment.NewLine;
             string script = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\showConnections.py";
-            var psi = new ProcessStartInfo();
-            psi.FileName = @"C:\Users\Gianfranco Lacasella\Anaconda3\python.exe";
             string nodes = nodesTextBox.Text;
             string nodesFlag = "-n";
             string connections = connectionsTextBox.Text;
             string connectionsFlag = "-c";
-            psi.Arguments = $"{script} {nodesFlag} {nodes} {connectionsFlag} {connections}";
-            psi.UseShellExecute = false;
-            psi.CreateNoWindow = true;
-            psi.RedirectStandardOutput = true;
-            psi.RedirectStandardError = true;
-            var errors = "";
-            var results = "";
-            using (var process = Process.Start(psi))
-            {
-                errors = process.StandardError.ReadToEnd();
-                results = process.StandardOutput.ReadToEnd();
-                process.Close();
-            }
-            string Results = results;
+            List<string> resultList = executeScript($"{script} {nodesFlag} {nodes} {connectionsFlag} {connections}");
+            string Results = resultList[0];
             string[] resultSeparated = Results.Split('\n');
             if (resultSeparated.Length > 1)
             {
                 resultBox.Text += resultSeparated[1];
-                resultBox.Text += errors;
+                resultBox.Text += resultList[1];
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 string imageName = @"\py\connections" + @resultSeparated[0] + ".jpg";
                 imageName = imageName.Replace('\r', '.');
@@ -119,35 +110,21 @@ namespace StaticsTrussSolver
         // Click on add forces
         private void button3_Click(object sender, EventArgs e)
         {
-            resultBox.Text += System.Environment.NewLine + "    Processing..." + System.Environment.NewLine;
+            
             string script = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\showForces.py";
-            var psi = new ProcessStartInfo();
-            psi.FileName = @"C:\Users\Gianfranco Lacasella\Anaconda3\python.exe";
             string nodes = nodesTextBox.Text;
             string nodesFlag = "-n";
             string connections = connectionsTextBox.Text;
             string connectionsFlag = "-c";
             string forces= forcesTextBox.Text;
             string forcesFlag = "-f";
-            psi.Arguments = $"{script} {nodesFlag} {nodes} {connectionsFlag} {connections} {forcesFlag} {forces}";
-            psi.UseShellExecute = false;
-            psi.CreateNoWindow = true;
-            psi.RedirectStandardOutput = true;
-            psi.RedirectStandardError = true;
-            var errors = "";
-            var results = "";
-            using (var process = Process.Start(psi))
-            {
-                errors = process.StandardError.ReadToEnd();
-                results = process.StandardOutput.ReadToEnd();
-                process.Close();
-            }
-            string Results = results;
+            List<string> resultList = executeScript($"{script} {nodesFlag} {nodes} {connectionsFlag} {connections} {forcesFlag} {forces}");
+            string Results = resultList[0];
             string[] resultSeparated = Results.Split('\n');
             if (resultSeparated.Length > 1)
             {
                 resultBox.Text += resultSeparated[1];
-                resultBox.Text += errors;
+                resultBox.Text += resultList[1];
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 string imageName = @"\py\forces" + @resultSeparated[0] + ".jpg";
                 imageName = imageName.Replace('\r', '.');
@@ -159,10 +136,7 @@ namespace StaticsTrussSolver
         // Solve button
         private void solveButton_Click(object sender, EventArgs e)
         {
-            resultBox.Text += System.Environment.NewLine + "    Processing..." + System.Environment.NewLine;
             string script = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\solver.py";
-            var psi = new ProcessStartInfo();
-            psi.FileName = @"C:\Users\Gianfranco Lacasella\Anaconda3\python.exe";
             string nodes = nodesTextBox.Text;
             string nodesFlag = "-n";
             string connections = connectionsTextBox.Text;
@@ -171,20 +145,8 @@ namespace StaticsTrussSolver
             string forcesFlag = "-f";
             string restrictions = restrictionsTextBox.Text;
             string restrictionsFlag = "-r";
-            psi.Arguments = $"{script} {nodesFlag} {nodes} {connectionsFlag} {connections} {forcesFlag} {forces} {restrictionsFlag} {restrictions}";
-            psi.UseShellExecute = false;
-            psi.CreateNoWindow = true;
-            psi.RedirectStandardOutput = true;
-            psi.RedirectStandardError = true;
-            var errors = "";
-            var results = "";
-            using (var process = Process.Start(psi))
-            {
-                errors = process.StandardError.ReadToEnd();
-                results = process.StandardOutput.ReadToEnd();
-                process.Close();
-            }
-            string Results = results;
+            List<string> resultList = executeScript($"{script} {nodesFlag} {nodes} {connectionsFlag} {connections} {forcesFlag} {forces} {restrictionsFlag} {restrictions}");
+            string Results = resultList[0];
             string[] resultSeparated = Results.Split('\n');
             if (resultSeparated.Length > 1 && resultSeparated[0] != "ERRORI\r" && resultSeparated[0] != "ERRORM\r")
             {
@@ -195,7 +157,7 @@ namespace StaticsTrussSolver
                     resultBox.Text += resultSeparated[i] + Environment.NewLine;
                     i++;
                 }
-                resultBox.Text += errors;
+                resultBox.Text += resultList[1];
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 string imageName = @"\py\result" + @resultSeparated[0] + ".jpg";
