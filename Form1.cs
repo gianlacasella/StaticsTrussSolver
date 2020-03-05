@@ -27,10 +27,7 @@ namespace StaticsTrussSolver
             this.clearFolder();
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.clearFolder();
-        }
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e){}
 
         private void clearFolder()
         {
@@ -157,6 +154,71 @@ namespace StaticsTrussSolver
                 imageName = imageName.Replace("..", ".");
                 pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
             }
+        }
+
+        // Solve button
+        private void solveButton_Click(object sender, EventArgs e)
+        {
+            resultBox.Text += System.Environment.NewLine + "    Processing..." + System.Environment.NewLine;
+            string script = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\solver.py";
+            var psi = new ProcessStartInfo();
+            psi.FileName = @"C:\Users\Gianfranco Lacasella\Anaconda3\python.exe";
+            string nodes = nodesTextBox.Text;
+            string nodesFlag = "-n";
+            string connections = connectionsTextBox.Text;
+            string connectionsFlag = "-c";
+            string forces = forcesTextBox.Text;
+            string forcesFlag = "-f";
+            string restrictions = restrictionsTextBox.Text;
+            string restrictionsFlag = "-r";
+            psi.Arguments = $"{script} {nodesFlag} {nodes} {connectionsFlag} {connections} {forcesFlag} {forces} {restrictionsFlag} {restrictions}";
+            psi.UseShellExecute = false;
+            psi.CreateNoWindow = true;
+            psi.RedirectStandardOutput = true;
+            psi.RedirectStandardError = true;
+            var errors = "";
+            var results = "";
+            using (var process = Process.Start(psi))
+            {
+                errors = process.StandardError.ReadToEnd();
+                results = process.StandardOutput.ReadToEnd();
+                process.Close();
+            }
+            string Results = results;
+            string[] resultSeparated = Results.Split('\n');
+            if (resultSeparated.Length > 1 && resultSeparated[0] != "ERRORI\r" && resultSeparated[0] != "ERRORM\r")
+            {
+                resultBox.Text += resultSeparated[1] + Environment.NewLine;
+                int i = 2;
+                while (i < resultSeparated.Length)
+                {
+                    resultBox.Text += resultSeparated[i] + Environment.NewLine;
+                    i++;
+                }
+                resultBox.Text += errors;
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                string imageName = @"\py\result" + @resultSeparated[0] + ".jpg";
+                imageName = imageName.Replace('\r', '.');
+                imageName = imageName.Replace("..", ".");
+                if (imageName != @"\py\resultERROR.jpg")
+                {
+                    pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
+                }
+            }
+            else 
+            {
+                switch (resultSeparated[0])
+                {
+                    case "ERRORI\r":
+                        resultBox.Text += "ERROR: GIE<0";
+                        break;
+                    case "ERRORM\r":
+                        resultBox.Text += "ERROR: GIE>0";
+                        break;
+                }
+            }
+            
         }
     }
 }

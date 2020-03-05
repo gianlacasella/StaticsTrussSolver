@@ -9,6 +9,8 @@ from scipy import sin as scisin
 from scipy import cos as scicos
 from scipy.linalg import solve as scisolve
 from matplotlib import pyplot as pt
+from os import chdir
+from glob import glob
 
 # Codigo de prueba python solver.py -n [0;0],[3;0],[3;4],[9;0],[9;4],[12;0] -c [0;1],[0;2],[1;2],[1;4],[1;3],[2;4],[3;4],[3;5],[5;4] -r [0;3.14/2],[5;3.14/2],[5;0] -f [1;0.;-3000],[3;0.;-5000],[4;2000;0.]
 
@@ -82,12 +84,24 @@ class App:
         pt.ylim(miny-1,maxy+1)
         
         #Showing result
-        pt.savefig('../../py/result.jpg',dpi=1000,quality=95,format='jpg',optimize=True)
-        print(self._GIE)
-        print(self._result)
+        fileNumber= self.findNumber()
+        print(fileNumber)
+        path = "result"+fileNumber+".jpg"
+        pt.savefig(path,dpi=1000,quality=95,format='jpg',optimize=True)
+        print('    ***** SHOWING RESULT *****')
+        print('GIE:', self._GIE)
+        print('Solution: ', self._result)
         exit(0)
         
-        
+    def findNumber(self):
+        maxNumber = 0
+        chdir("../../py")
+        for file in glob("*.jpg"):
+            if file[:6] == "result":
+                if file[6] != ".":
+                    if(int(file[6]) > maxNumber):
+                        maxNumber = int(file[6])
+        return str(maxNumber+1)
         
     
     def solve(self):
@@ -140,12 +154,11 @@ class App:
         # Degree of static indeterminacy
         self._GIE = self._b+self._r - 2*self._n
         if self._GIE > 0 :
-            print('ERROR')
+            print('ERRORM')
             exit(1)
         elif self._GIE < 0 :
-            print('ERROR')
+            print('ERRORI')
             exit(1)
-        
             
     def processInput(self):
         #Reading input

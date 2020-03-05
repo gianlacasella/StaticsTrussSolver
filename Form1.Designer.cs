@@ -43,11 +43,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.forcesTextBox = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.restrictionsTextBox = new System.Windows.Forms.TextBox();
+            this.solveButton = new System.Windows.Forms.Button();
             this.solutionPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.nodesPanel.SuspendLayout();
             this.connectionsPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // solutionPanel
@@ -206,11 +211,53 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.restrictionsTextBox);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(379, 311);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(754, 100);
+            this.panel2.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(232, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 18);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Insert restrictions";
+            // 
+            // restrictionsTextBox
+            // 
+            this.restrictionsTextBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.restrictionsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restrictionsTextBox.Location = new System.Drawing.Point(370, 0);
+            this.restrictionsTextBox.Multiline = true;
+            this.restrictionsTextBox.Name = "restrictionsTextBox";
+            this.restrictionsTextBox.Size = new System.Drawing.Size(384, 100);
+            this.restrictionsTextBox.TabIndex = 4;
+            // 
+            // solveButton
+            // 
+            this.solveButton.Location = new System.Drawing.Point(1005, 613);
+            this.solveButton.Name = "solveButton";
+            this.solveButton.Size = new System.Drawing.Size(116, 28);
+            this.solveButton.TabIndex = 6;
+            this.solveButton.Text = "SOLVE SYSTEM";
+            this.solveButton.UseVisualStyleBackColor = true;
+            this.solveButton.Click += new System.EventHandler(this.solveButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 653);
+            this.Controls.Add(this.solveButton);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.connectionsPanel);
             this.Controls.Add(this.nodesPanel);
@@ -228,6 +275,8 @@
             this.connectionsPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -249,5 +298,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox forcesTextBox;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox restrictionsTextBox;
+        private System.Windows.Forms.Button solveButton;
     }
 }
