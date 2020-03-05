@@ -39,10 +39,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.connectionsTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.forcesTextBox = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.solutionPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.nodesPanel.SuspendLayout();
             this.connectionsPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // solutionPanel
@@ -160,11 +165,53 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Insert connections coordinates";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.forcesTextBox);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(379, 211);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(754, 100);
+            this.panel1.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(79, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 18);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Insert forces";
+            // 
+            // forcesTextBox
+            // 
+            this.forcesTextBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.forcesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forcesTextBox.Location = new System.Drawing.Point(370, 0);
+            this.forcesTextBox.Multiline = true;
+            this.forcesTextBox.Name = "forcesTextBox";
+            this.forcesTextBox.Size = new System.Drawing.Size(384, 100);
+            this.forcesTextBox.TabIndex = 4;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(235, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(135, 100);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Show Forces";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 653);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.connectionsPanel);
             this.Controls.Add(this.nodesPanel);
             this.Controls.Add(this.solutionPanel);
@@ -179,6 +226,8 @@
             this.nodesPanel.PerformLayout();
             this.connectionsPanel.ResumeLayout(false);
             this.connectionsPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -196,5 +245,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox connectionsTextBox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox forcesTextBox;
+        private System.Windows.Forms.Button button3;
     }
 }

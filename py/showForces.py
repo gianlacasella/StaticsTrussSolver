@@ -1,12 +1,25 @@
 from optparse import OptionParser
 from scipy import array as sciarray
 from matplotlib import pyplot as pt
+from os import chdir
+from glob import glob
+
+# [1;0.;-3000],[3;0.;-5000],[4;2000;0.]
 
 class App:
     def __init__(self):
         self.processInput()
         self.showForces()
-        
+    
+    def findNumber(self):
+        maxNumber = 0
+        chdir("../../py")
+        for file in glob("*.jpg"):
+            if file[:6] == "forces":
+                if file[6] != ".":
+                    if(int(file[6]) > maxNumber):
+                        maxNumber = int(file[6])
+        return str(maxNumber+1)
     
     def processInput(self):
         #Reading input
@@ -111,8 +124,11 @@ class App:
             
         pt.xlim(minx-1,maxx+1)
         pt.ylim(miny-1,maxy+1)
-        pt.savefig(pt.savefig('../../py/forces.jpg',dpi=1000,quality=95,format='jpg',optimize=True))
-        print('Done')
+        fileNumber= self.findNumber()
+        print(fileNumber)
+        path = "forces"+fileNumber+".jpg"
+        pt.savefig(path,dpi=1000,quality=95,format='jpg',optimize=True)
+        print('    ***** SHOWING ' + str(len(self._forces)) + ' FORCES *****')
         exit(0)
         
 if __name__ == "__main__":

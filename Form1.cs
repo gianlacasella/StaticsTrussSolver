@@ -118,5 +118,45 @@ namespace StaticsTrussSolver
                 pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
             }
         }
+
+        // Click on add forces
+        private void button3_Click(object sender, EventArgs e)
+        {
+            resultBox.Text += System.Environment.NewLine + "    Processing..." + System.Environment.NewLine;
+            string script = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\showForces.py";
+            var psi = new ProcessStartInfo();
+            psi.FileName = @"C:\Users\Gianfranco Lacasella\Anaconda3\python.exe";
+            string nodes = nodesTextBox.Text;
+            string nodesFlag = "-n";
+            string connections = connectionsTextBox.Text;
+            string connectionsFlag = "-c";
+            string forces= forcesTextBox.Text;
+            string forcesFlag = "-f";
+            psi.Arguments = $"{script} {nodesFlag} {nodes} {connectionsFlag} {connections} {forcesFlag} {forces}";
+            psi.UseShellExecute = false;
+            psi.CreateNoWindow = true;
+            psi.RedirectStandardOutput = true;
+            psi.RedirectStandardError = true;
+            var errors = "";
+            var results = "";
+            using (var process = Process.Start(psi))
+            {
+                errors = process.StandardError.ReadToEnd();
+                results = process.StandardOutput.ReadToEnd();
+                process.Close();
+            }
+            string Results = results;
+            string[] resultSeparated = Results.Split('\n');
+            if (resultSeparated.Length > 1)
+            {
+                resultBox.Text += resultSeparated[1];
+                resultBox.Text += errors;
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                string imageName = @"\py\forces" + @resultSeparated[0] + ".jpg";
+                imageName = imageName.Replace('\r', '.');
+                imageName = imageName.Replace("..", ".");
+                pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
+            }
+        }
     }
 }
