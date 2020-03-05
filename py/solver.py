@@ -45,10 +45,11 @@ class App:
                 y0 = scimean(y)
                 pt.plot(x,y,color = c,linewidth = 2)
                 rk = rk/1000
-                pt.text(x0-0.5,y0,"{0:4.1f}kN".format(rk), fontsize = 9, color = "k")
+                pt.text(x0-0.5,y0,"{0:4.1f}kN".format(rk), fontsize = 7, color = "k")
                 k+=1
                 
             #Plotting forces
+            """
             minx = self._nodes[:,0].min()+1
             miny = self._nodes[:,1].min()+1
             maxx = self._nodes[:,0].max()+1
@@ -83,6 +84,7 @@ class App:
                     #pt.text(force[1]+node_coordinates[0]+0.3,force[2]+node_coordinates[1],'(' + str(force[1]) + ',' + str(force[2]) + ')')
             pt.xlim(minx-1,maxx+1)
             pt.ylim(miny-1,maxy+1)
+            """
             
             #Showing result
             fileNumber= self.findNumber()
