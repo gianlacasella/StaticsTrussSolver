@@ -24,7 +24,20 @@ namespace StaticsTrussSolver
         private void Form1_Load(object sender, EventArgs e)
         {
             pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
-            
+            this.clearFolder();
+        }
+
+        private void clearFolder()
+        {
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\";
+            string notDelete = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg";
+            foreach (string file in Directory.GetFiles(path, "*.jpg").Where(item => item.EndsWith(".jpg")))
+                {
+                    if (file != notDelete) 
+                    {
+                        File.Delete(file);
+                    }
+                }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -60,6 +73,11 @@ namespace StaticsTrussSolver
                 imageName = imageName.Replace("..", ".");
                 pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.clearFolder();
         }
     }
 }
