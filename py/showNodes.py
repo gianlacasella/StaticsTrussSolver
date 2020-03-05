@@ -1,6 +1,10 @@
 from optparse import OptionParser
 from scipy import array as sciarray
 from matplotlib import pyplot as pt
+from os import chdir
+from glob import glob
+
+# [0;0],[3;0],[3;4],[9;0],[9;4],[12;0]
 
 class App:
     def __init__(self):
@@ -37,9 +41,26 @@ class App:
         for node in self._nodesAsList:
             pt.text(node[0]-0.5, node[1]+0.1, i)
             i+=1
-        pt.savefig('../../py/nodes.jpg',dpi=1000,quality=95,format='jpg',optimize=True)
+        fileNumber= self.findNumber()
+        print(fileNumber)
+        path = "nodes"+fileNumber+".jpg"
+        pt.savefig(path,dpi=1000,quality=95,format='jpg',optimize=True)
         print('Done')
         exit(0)
+        
+        
+    def findNumber(self):
+        maxNumber = 0
+        chdir("../../py")
+        for file in glob("*.jpg"):
+            if file[:5] == "nodes":
+                if file[5] != ".":
+                    if(int(file[5]) > maxNumber):
+                        maxNumber = int(file[5])
+        return str(maxNumber+1)
+        
+        
+        
         
 if __name__ == "__main__":
     pySolver = App()

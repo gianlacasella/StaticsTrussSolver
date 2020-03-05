@@ -65,6 +65,7 @@
             this.resultBox.Location = new System.Drawing.Point(0, 359);
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
+            this.resultBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.resultBox.Size = new System.Drawing.Size(379, 352);
             this.resultBox.TabIndex = 1;
             // 
@@ -97,6 +98,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Add Nodes";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
