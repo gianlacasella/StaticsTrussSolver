@@ -2,21 +2,21 @@
 
 ## A program to solves Statics Truss Problems
 
-A program that solves Statics Truss Problems, made with a mix of C# (used for GUI) and Python (used to solve the problems and graphing the result). With this program, you will be able to **save the problem solution graph and the nodes, connections and forces** in a very high resolution.
+A program that **solves Statics Truss Problems, made with a mix of C# (used for GUI) and Python (used to solve the problems and graphing the result)**. With this program, you will be able to **save the problem solution graph and the nodes, connections and forces** in a very high resolution.
 
 Program view (solved problem)|  Full size view (solved problem)
 :---------------------------:|:--------------------------------:
 ![](img/sts12.JPG)           |  ![](img/sts13.JPG)
 
-As you can see in the previous images, once solved, the program generates a truss plot. Over each bar/connection that forms
-the truss prints the net force that is applied over it, and the colors indicates if they are on compression or on traction:
+As you can see in the previous images, once solved, **the program generates a truss plot. Over each bar/connection that forms
+the truss prints the net force that is applied over it, and the colors indicates if they are on compression or on traction**:
 
-* Red: compression
-* Purple-like: between compression and traction
-* Blue: traction
+* **Red**: compression
+* **Purple-like**: between compression and traction
+* **Blue**: traction
 
-Notice that in the console log the program generates a solution vector, which includes all the bars/connections and the
-reactions over the truss supports.
+Notice that **in the console log the program generates a solution vector, which includes all the bars/connections and the
+reactions over the truss supports**.
 
 ## Getting started
 
