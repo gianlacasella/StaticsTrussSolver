@@ -15,7 +15,7 @@ the truss prints the net force that is applied over it, and the colors indicates
 * **Purple-like**: between compression and traction
 * **Blue**: traction
 
-Notice that **in the console log the program generates a solution vector, which includes all the bars/connections and the
+Also, **in the console log the program generates a solution vector, which includes all the bars/connections and the
 reactions over the truss supports**.
 
 ## Getting started
