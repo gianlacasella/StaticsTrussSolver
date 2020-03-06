@@ -2,7 +2,7 @@
 
 ## A program to solves Statics Truss Problems
 
-A program that **solves Statics Truss Problems, made with a mix of C# (used for GUI) and Python (used to solve the problems and graphing the result: scipy and matplotlib)**. With this program, you will be able to **save the problem solution graph and the nodes, connections and forces** in a very high resolution.
+A program that **solves Statics Truss Problems, made with a mix of C# (used for GUI) and Python (used to solve the problems and graphing the result: Scipy and Matplotlib)**. With this program, you will be able to **save the problem solution graph and the nodes, connections and forces** in a very high resolution.
 
 Program view (solved problem)|  Full size view (solved problem)
 :---------------------------:|:--------------------------------:
@@ -115,7 +115,7 @@ Console log (DSI and solution vector)|Console log (truss supports reactions)
 
 ## What I learned
 
-* How to use python scripts from a C# WinForms application
+* How to execute Python scripts from a C# WinForms application
 * How to solve Truss problems with Scipy and Matplotlib
 * Matplotlib better understanding
 
