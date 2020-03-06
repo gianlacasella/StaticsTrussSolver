@@ -48,6 +48,19 @@ Program view (nodes+connect) |  Full size view (nodes+connect)
 :---------------------------:|:--------------------------------:
 ![](img/sts4.JPG)            |  ![](img/sts5.JPG)
 
+4. Insert the external forces acting over the truss, in the third entry box with the following format:
+```
+[nodeIndex;xComponent;yComponent]
+```
+For example, insert:
+```
+[2;0;-30000],[5;0;-15000],[6;0;-15000],[7;0;-30000]
+```
+
+Program view (nodes+connect+forces)|Full size view (nodes+connect+forces)
+:---------------------------------:|:------------------------------------:
+![](img/sts6.JPG)                  |  ![](img/sts7.JPG)
+
 ## Prerequisites
 
 ## What I learned
