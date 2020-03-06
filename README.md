@@ -10,6 +10,26 @@ Program view (solved problem)|  Full size view (solved problem)
 
 ## Getting started
 
+Download or clone this repository, open the solution on Visual Studio. Then, just run it in any mode (debug or release).
+Insert the path to your python interpreter in the dialog, which should have the following form:
+```
+	YourDisk:\and\your\path\python.exe
+```
+***It is very important to not insert in the path folders which names are separated by space***
+Then, you're ready to go. Insert the truss nodes coordinates in the first entry box in the following format:
+```
+	[x1;y1],[x2;y2],...,[xn;yn]
+```
+For example, insert:
+```
+	[0;0],[4;3],[3;4],[7;6],[6;7],[10;10],[20;10],[24;7],[23;6],[27;4],[26;3],[30;0]
+```
+And click "Show nodes" button. You will see the following:
+Program view (nodes)         |  Full size view (nodes)         |
+:---------------------------:|:--------------------------------:
+![](img/sts2.JPG)            |  ![](img/sts3.JPG)
+
+
 ## Prerequisites
 
 ## What I learned
