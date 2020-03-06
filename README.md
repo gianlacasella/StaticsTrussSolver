@@ -32,7 +32,7 @@ Then, you're ready to go.
 ```
 [x1;y1],[x2;y2],...,[xn;yn]
 ```
-For example, insert:
+Example:
 ```
 [0;0],[4;3],[3;4],[7;6],[6;7],[10;10],[20;10],[24;7],[23;6],[27;4],[26;3],[30;0]
 ```
@@ -48,7 +48,7 @@ Program view (nodes)         |  Full size view (nodes)
 ```
 Means that we are connecting the 0th node with the 1st, and the 0th with the 2nd node, which positions are given by
 the nodes entry box positions.
-For example, insert:
+Example:
 ```
 [0;1],[0;2],[1;2],[2;4],[1;4],[1;3],[3;4],[4;5],[3;5],[3;6],[5;6],[6;7],[6;8],[8;7],[7;9],[7;10],[8;10],[10;9],[9;11],[10;11]
 ```
@@ -62,7 +62,7 @@ Program view (nodes+connect) |  Full size view (nodes+connect)
 ```
 [nodeIndex;xComponent;yComponent]
 ```
-For example, insert:
+Example:
 ```
 [2;0;-30000],[5;0;-15000],[6;0;-15000],[7;0;-30000]
 ```
