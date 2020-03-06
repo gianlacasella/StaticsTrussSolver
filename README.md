@@ -93,6 +93,11 @@ and the solution vector. Notice that the first 20 values are the bars/connection
 and the four values below are the truss supports reactions, in the same order as specified
 on the restrictions entry box.
 
+
+Console log (DSI and solution vector)|Console log (truss supports reactions)
+:-----------------------------------:|:-------------------------------------:
+![](img/sts9.JPG)                    |  ![](img/sts10.JPG)
+
 ## Prerequisites
 
 ## What I learned
