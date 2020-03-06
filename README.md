@@ -88,7 +88,10 @@ Program view (solved problem)      |Full size view (solved problem)
 :---------------------------------:|:------------------------------------:
 ![](img/sts8.JPG)                  |  ![](img/sts11.JPG)
 
-
+On the console log, you will see the Degree of Static Indeterminacy (GIE in spanish),
+and the solution vector. Notice that the first 20 values are the bars/connections net forces,
+and the four values below are the truss supports reactions, in the same order as specified
+on the restrictions entry box.
 
 ## Prerequisites
 
