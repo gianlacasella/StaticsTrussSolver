@@ -20,16 +20,14 @@ reactions over the truss supports**.
 
 ## Getting started
 
->1. Download or clone this repository, open the solution on Visual Studio. Then, just run it in any mode (debug or release).
->>Insert the path to your python interpreter in the dialog, which should have the following form:
+1. Download or clone this repository, open the solution on Visual Studio. Then, just run it in any mode (debug or release).
+Insert the path to your python interpreter in the dialog, which should have the following form:
 ```
 YourDisk:\and\your\path\python.exe
 ```
->>***It is very important to not insert in the path folders which names are separated by space.***
->>Then, you're ready to go. 
-
-
-
+***It is very important to not insert in the path folders which names are separated by space.***
+Then, you're ready to go. 
+<br><br>
 2. Insert the truss nodes coordinates in the first entry box in the following format:
 ```
 [x1;y1],[x2;y2],...,[xn;yn]
@@ -43,9 +41,7 @@ And click "Show nodes" button. You will see the following:
 Program view (nodes)         |  Full size view (nodes)
 :---------------------------:|:--------------------------------:
 ![](img/sts2.JPG)            |  ![](img/sts3.JPG)
-
-
-
+<br><br>
 3. Insert the truss connections in the second entry box in the same format as the nodes. Note that
 ```
 [0;1],[0;2]
@@ -61,9 +57,7 @@ And click "Show connections" button. You will see the following:
 Program view (nodes+connect) |  Full size view (nodes+connect)
 :---------------------------:|:--------------------------------:
 ![](img/sts4.JPG)            |  ![](img/sts5.JPG)
-
-
-
+<br><br>
 4. Insert the external forces acting over the truss, in the third entry box with the following format:
 ```
 [nodeIndex;xComponent;yComponent]
@@ -76,9 +70,7 @@ Program view (nodes+connect) |  Full size view (nodes+connect)
 Program view (nodes+connect+forces)|Full size view (nodes+connect+forces)
 :---------------------------------:|:------------------------------------:
 ![](img/sts6.JPG)                  |  ![](img/sts7.JPG)
-
-
-
+<br><br>
 5. Insert the system restrictions, in the following format:
 ```
 [nodeIndex;restrictionAngleInRadians]
