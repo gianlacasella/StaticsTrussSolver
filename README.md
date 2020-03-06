@@ -43,6 +43,7 @@ For example, insert:
 [0;1],[0;2],[1;2],[2;4],[1;4],[1;3],[3;4],[4;5],[3;5],[3;6],[5;6],[6;7],[6;8],[8;7],[7;9],[7;10],[8;10],[10;9],[9;11],[10;11]
 ```
 And click "Show connections" button. You will see the following:
+
 Program view (nodes+connect) |  Full size view (nodes+connect)
 :---------------------------:|:--------------------------------:
 ![](img/sts4.JPG)            |  ![](img/sts5.JPG)
