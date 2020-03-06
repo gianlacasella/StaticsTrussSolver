@@ -21,7 +21,7 @@ reactions over the truss supports**.
 ## Prerequisites
 * Visual Studio
 * C# .NET Framework
-* Python 3.6 with matplotlib and scipy
+* Python 3.6 with Matplotlib and Scipy
 
 ## Getting started
 
@@ -115,10 +115,9 @@ Console log (DSI and solution vector)|Console log (truss supports reactions)
 
 ## What I learned
 
-* C# OOP and to use Visual Studio IDE
-* .NET Framework's WinForms
-* Using IBM Watson Developer Cloud v3.0 API with Pictures Recognition service
-* Edit photos with C#
+* How to use python scripts from a C# WinForms application
+* How to solve Truss problems with Scipy and Matplotlib
+* Matplotlib better understanding
 
 ## Authors
 
@@ -127,3 +126,7 @@ Console log (DSI and solution vector)|Console log (truss supports reactions)
 ## License
 
 This project is licensed under the GNU GENERAL PUBLIC LICENSE- see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgements
+
+To Prof. Jose Antonio Abell, who helped me with the Algorithm design
