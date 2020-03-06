@@ -20,13 +20,13 @@ reactions over the truss supports**.
 
 ## Getting started
 
-1. Download or clone this repository, open the solution on Visual Studio. Then, just run it in any mode (debug or release).
-Insert the path to your python interpreter in the dialog, which should have the following form:
+>1. Download or clone this repository, open the solution on Visual Studio. Then, just run it in any mode (debug or release).
+>>Insert the path to your python interpreter in the dialog, which should have the following form:
 ```
 YourDisk:\and\your\path\python.exe
 ```
-***It is very important to not insert in the path folders which names are separated by space.***
-Then, you're ready to go. 
+>>***It is very important to not insert in the path folders which names are separated by space.***
+>>Then, you're ready to go. 
 
 
 
