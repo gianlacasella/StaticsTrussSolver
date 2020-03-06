@@ -4,7 +4,7 @@
 
 A program that solves Statics Truss Problems, made with a mix of C# (used for GUI) and Python (used to solve the problems and graphing the result). With this program, you will be able to **save the problem solution graph and the nodes, connections and forces** in a very high resolution.
 
-<img src="img/sts12.JPG" alt="screenshot" width="800" display="inline"/>
+<img src="img/sts12.JPG" alt="screenshot" width="500" display="inline"/>
 <img src="img/sts13.JPG" alt="screenshot" width="800"/>
 
 ## Getting started
