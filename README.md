@@ -15,8 +15,10 @@ Insert the path to your python interpreter in the dialog, which should have the 
 ```
 YourDisk:\and\your\path\python.exe
 ```
-***It is very important to not insert in the path folders which names are separated by space***
-Then, you're ready to go. Insert the truss nodes coordinates in the first entry box in the following format:
+***It is very important to not insert in the path folders which names are separated by space.***
+Then, you're ready to go. 
+
+Insert the truss nodes coordinates in the first entry box in the following format:
 ```
 [x1;y1],[x2;y2],...,[xn;yn]
 ```
@@ -30,6 +32,20 @@ Program view (nodes)         |  Full size view (nodes)
 :---------------------------:|:--------------------------------:
 ![](img/sts2.JPG)            |  ![](img/sts3.JPG)
 
+Insert the truss connections in the second entry box in the same format as the nodes. Note that
+```
+[0;1],[0;2]
+```
+Means that we are connecting the 0th node with the 1st, and the 0th with the 2nd node, which positions are given by
+the nodes entry box positions.
+For example, insert:
+```
+[0;1],[0;2],[1;2],[2;4],[1;4],[1;3],[3;4],[4;5],[3;5],[3;6],[5;6],[6;7],[6;8],[8;7],[7;9],[7;10],[8;10],[10;9],[9;11],[10;11]
+```
+And click "Show connections" button. You will see the following:
+Program view (nodes+connect) |  Full size view (nodes+connect)
+:---------------------------:|:--------------------------------:
+![](img/sts4.JPG)            |  ![](img/sts5.JPG)
 
 ## Prerequisites
 
