@@ -32,3 +32,28 @@ D:\Personal\PROGRAMACION\StaticsTrussSolver\bin\Debug\Microsoft.Scripting.Metada
 D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.csproj.CopyComplete
 D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.Form1.resources
 D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.FullSizeForm.resources
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.exe.config
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.exe
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\StaticsTrussSolver.pdb
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\IronPython.dll
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\IronPython.Modules.dll
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\IronPython.SQLite.dll
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\IronPython.Wpf.dll
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\Microsoft.Scripting.dll
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\Microsoft.Scripting.Metadata.dll
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\IronPython.xml
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\IronPython.Modules.xml
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\IronPython.SQLite.xml
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\IronPython.Wpf.xml
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\Microsoft.Dynamic.xml
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\Microsoft.Scripting.xml
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\bin\Debug\Microsoft.Scripting.Metadata.xml
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.csprojAssemblyReference.cache
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.Form1.resources
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.FullSizeForm.resources
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.Properties.Resources.resources
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.csproj.GenerateResource.cache
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.csproj.CopyComplete
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.exe
+C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.pdb
