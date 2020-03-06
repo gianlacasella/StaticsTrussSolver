@@ -52,6 +52,7 @@ Program view (nodes)         |  Full size view (nodes)
 ```
 Means that we are connecting the 0th node with the 1st, and the 0th with the 2nd node, which positions are given by
 the nodes entry box positions.
+
 **Example**:
 ```
 [0;1],[0;2],[1;2],[2;4],[1;4],[1;3],[3;4],[4;5],[3;5],[3;6],[5;6],[6;7],[6;8],[8;7],[7;9],[7;10],[8;10],[10;9],[9;11],[10;11]
