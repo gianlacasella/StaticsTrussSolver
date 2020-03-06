@@ -8,6 +8,16 @@ Program view (solved problem)|  Full size view (solved problem)
 :---------------------------:|:--------------------------------:
 ![](img/sts12.JPG)           |  ![](img/sts13.JPG)
 
+As you can see in the previous images, once solved, the program generates a truss plot. Over each bar/connection that forms
+the truss prints the net force that is applied over it, and the colors indicates if they are on compression or on traction:
+
+* Red: compression
+* Purple-like: between compression and traction
+* Blue: traction
+
+Notice that in the console log the program generates a solution vector, which includes all the bars/connections and the
+reactions over the truss supports.
+
 ## Getting started
 
 1. Download or clone this repository, open the solution on Visual Studio. Then, just run it in any mode (debug or release).
