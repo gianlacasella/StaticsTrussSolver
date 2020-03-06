@@ -10,7 +10,7 @@ Program view (solved problem)|  Full size view (solved problem)
 
 ## Getting started
 
-Download or clone this repository, open the solution on Visual Studio. Then, just run it in any mode (debug or release).
+1. Download or clone this repository, open the solution on Visual Studio. Then, just run it in any mode (debug or release).
 Insert the path to your python interpreter in the dialog, which should have the following form:
 ```
 YourDisk:\and\your\path\python.exe
@@ -18,7 +18,7 @@ YourDisk:\and\your\path\python.exe
 ***It is very important to not insert in the path folders which names are separated by space.***
 Then, you're ready to go. 
 
-Insert the truss nodes coordinates in the first entry box in the following format:
+2. Insert the truss nodes coordinates in the first entry box in the following format:
 ```
 [x1;y1],[x2;y2],...,[xn;yn]
 ```
@@ -32,7 +32,7 @@ Program view (nodes)         |  Full size view (nodes)
 :---------------------------:|:--------------------------------:
 ![](img/sts2.JPG)            |  ![](img/sts3.JPG)
 
-Insert the truss connections in the second entry box in the same format as the nodes. Note that
+3. Insert the truss connections in the second entry box in the same format as the nodes. Note that
 ```
 [0;1],[0;2]
 ```
