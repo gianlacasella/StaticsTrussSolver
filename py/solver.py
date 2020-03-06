@@ -12,8 +12,6 @@ from matplotlib import pyplot as pt
 from os import chdir
 from glob import glob
 
-# Codigo de prueba python solver.py -n [0;0],[3;0],[3;4],[9;0],[9;4],[12;0] -c [0;1],[0;2],[1;2],[1;4],[1;3],[2;4],[3;4],[3;5],[5;4] -r [0;3.14/2],[5;3.14/2],[5;0] -f [1;0.;-3000],[3;0.;-5000],[4;2000;0.]
-
 class App:
     def __init__(self):
         self.processInput()

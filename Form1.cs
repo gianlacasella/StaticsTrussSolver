@@ -10,12 +10,15 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 
 namespace StaticsTrussSolver
 {
     public partial class Form1 : Form
     {
+        String pythonPath;
+
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace StaticsTrussSolver
             pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg";
             pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
             this.clearFolder();
+            this.pythonPath = @Interaction.InputBox("Please, introduce the path to python.exe: ", "Python.exe path", "your/path/to/python.exe");
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e){}
@@ -48,7 +52,7 @@ namespace StaticsTrussSolver
         {
             resultBox.Text += System.Environment.NewLine + "    Processing..." + System.Environment.NewLine;
             var psi = new ProcessStartInfo();
-            psi.FileName = @"C:\Users\Gianfranco Lacasella\Anaconda3\python.exe";
+            psi.FileName = this.pythonPath;
             psi.Arguments = argument;
             psi.UseShellExecute = false;
             psi.CreateNoWindow = true;
