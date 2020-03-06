@@ -77,6 +77,7 @@ Program view (nodes+connect+forces)|Full size view (nodes+connect+forces)
 [nodeIndex;restrictionAngleInRadians]
 ```
 ***It is very important to insert 3.14 instead of pi***
+
 **Example**:
 ```
 [0;3.14/2],[0;0],[11;3.14/2],[11;0]
