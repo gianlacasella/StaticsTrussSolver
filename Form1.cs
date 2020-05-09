@@ -40,12 +40,12 @@ namespace StaticsTrussSolver
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\";
             string notDelete = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg";
             foreach (string file in Directory.GetFiles(path, "*.jpg").Where(item => item.EndsWith(".jpg")))
+            {
+                if (file != notDelete) 
                 {
-                    if (file != notDelete) 
-                    {
-                        File.Delete(file);
-                    }
+                    File.Delete(file);
                 }
+            }
         }
 
         private List<string> executeScript(string argument) 
@@ -76,9 +76,14 @@ namespace StaticsTrussSolver
             string nodes = nodesTextBox.Text;
             string flag = "-n";
             List<string> resultList = this.executeScript($"{script} {flag} {nodes}");
+            foreach (string result in resultList)
+            {
+                resultBox.Text += result;
+            }
+
             string Results = resultList[0];
             string[] resultSeparated = Results.Split('\n');
-            if (resultSeparated.Length > 1 && resultSeparated[0] != "ERROR\r")
+            if (resultSeparated.Length > 1 && resultSeparated[0] != "ERROR")
             {
                 resultBox.Text += resultSeparated[1];
                 resultBox.Text += resultList[1];
@@ -92,9 +97,9 @@ namespace StaticsTrussSolver
                     pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + imageName);
                 }
             }
-            else 
+            else
             {
-                resultBox.Text += "    [!]ERROR: something went wrong";
+                resultBox.Text += "    [!] ERROR 1: something went wrong";
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg";
                 pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
@@ -129,7 +134,7 @@ namespace StaticsTrussSolver
             }
             else
             {
-                resultBox.Text += "    [!]ERROR: something went wrong";
+                resultBox.Text += "    [!] ERROR 2: something went wrong";
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
                 pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg";
@@ -162,7 +167,7 @@ namespace StaticsTrussSolver
             }
             else
             {
-                resultBox.Text += "    [!]ERROR: something went wrong";
+                resultBox.Text += "    [!] ERROR 3: something went wrong";
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox.Image = Bitmap.FromFile(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg");
                 pictureBox.Tag = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\py\empty.jpg";
@@ -215,7 +220,7 @@ namespace StaticsTrussSolver
                         resultBox.Text += "    [!]ERROR: GIE>0";
                         break;
                     case "ERROR\r":
-                        resultBox.Text += "    [!]ERROR: something went wrong";
+                        resultBox.Text += "    [!]ERROR: something went wrong4";
                         break;
                 }
             }

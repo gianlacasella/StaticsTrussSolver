@@ -57,3 +57,4 @@ C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussS
 C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.csproj.CopyComplete
 C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.exe
 C:\Users\Gianfranco Lacasella\Desktop\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.pdb
+D:\Personal\PROGRAMACION\StaticsTrussSolver\obj\Debug\StaticsTrussSolver.csproj.CoreCompileInputs.cache
