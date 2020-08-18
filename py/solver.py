@@ -20,7 +20,6 @@ class App:
         self.showResult()
         
         
-        
     def showResult(self):
         try:
             # min and max colors 
