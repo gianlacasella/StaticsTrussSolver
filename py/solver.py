@@ -84,7 +84,7 @@ class App:
             """
             
             #Showing result
-            fileNumber= self.findNumber()
+            fileNumber = self.findNumber()
             print(fileNumber)
             path = "result"+fileNumber+".jpg"
             pt.savefig(path,dpi=1000,quality=95,format='jpg',optimize=True)
